@@ -33,6 +33,56 @@ button:hover {
   background: white;
 }
 
+.burger {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.burger span {
+  position: absolute;
+  border-radius: 4px;
+  height: 3px;
+  width: 55%;
+  background: #7834c7;
+}
+
+.burger span:first-child {
+  transform: translateY(-10px);
+  left: 15px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.burger.active span:first-child {
+  transform: translateX(1px) rotate(45deg);
+}
+
+.burger span:nth-child(2) {
+  transform: scaleX(0.5);
+  transition: transform 0.5s ease-in-out;
+}
+
+.burger.active span:nth-child(2) {
+  transform: translateX(150%);
+}
+
+.burger span:last-child {
+  transform: translateY(10px);
+  right: 15px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.burger.active span:last-child {
+  transform: translateX(-1px) rotate(-45deg);
+}
+
 .navigation {
   background-color: white;
   width: 100%;
@@ -126,16 +176,13 @@ button:hover {
 }
 .container-cards-card-info h2 {
   font-weight: bold;
-  padding: 1rem 0;
 }
 .container-cards-card-info p {
   font-size: 15 px;
-  padding: 1rem 0;
 }
 .container-cards-card-info h3 {
   color: #7834c7;
   font-weight: bold;
-  padding: 1rem 0;
 }
 .container h1 {
   margin-top: 2rem;
@@ -164,4 +211,69 @@ button:hover {
 }
 .container-description-info p {
   margin: 0 0 1rem 0;
+}
+
+@media screen and (max-width: 1140px) {
+  .container {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 975px) {
+  .container {
+    width: 85%;
+  }
+  .container-cards {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 750px) {
+  .burger {
+    display: flex;
+  }
+
+  .navigation-links {
+    height: 0;
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    top: 70px;
+    transition: height 0.5s ease-in-out;
+  }
+  .navigation-links.active {
+    height: 280px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .header-block {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .container {
+    width: 95%;
+  }
+  .container-cards-card {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .container-description {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container-description-img {
+    width: 100%;
+  }
+  .container-description-info {
+    width: 90%;
+    margin: 0;
+    text-align: center;
+  }
 }/*# sourceMappingURL=index.css.map */

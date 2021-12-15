@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HOME</title>
     <link rel="stylesheet" href="styles/index.css">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </head>
@@ -24,6 +24,19 @@
         <ul class="navigation-options">
             <li><a href="#"><ion-icon name="cart"></ion-icon></a></li>
         </ul>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <script>
+            let container = document.querySelector('.burger');
+            let n_links = document.querySelector('.navigation-links');
+            container.addEventListener('click', () => {
+                container.classList.toggle('active');
+                n_links.classList.toggle('active');
+            })
+        </script> 
     </nav>
     <!--=======header sart=======-->
     <header class="header">
@@ -69,6 +82,5 @@
             </div>
         </div>
     </div>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda vitae neque ab doloribus eaque possimus sit voluptatibus. Consectetur soluta officia fugiat corporis ab laboriosam repellendus eligendi voluptatibus at perspiciatis nobis inventore vitae doloribus expedita, illo voluptatum? Illum, illo consequatur accusamus atque laborum explicabo doloremque nam nesciunt, ad dicta alias ut minima. Laboriosam dolorem voluptatum delectus aliquam in quasi molestias quae ducimus magni, velit dignissimos corporis iusto, libero doloremque nisi ipsa repellat labore aspernatur, exercitationem dicta quas? Animi provident autem accusantium voluptas doloribus fugiat dolorum. Temporibus voluptatibus quos fugiat quasi totam aliquid. Veritatis, autem iste reiciendis quis distinctio architecto sit incidunt.
 </body>
 </html>

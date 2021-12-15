@@ -24,19 +24,63 @@ li{
 }
 
 button{
-            background: $violet;
-            color: $blanc;
-            padding: 1rem;
-            border: none;
-            font-weight: bold;
-            border-radius: 10px;
-            transition: .3s ease-in-out;
-            &:hover{
-                cursor: pointer;
-                //border: 1px solid $violet;
-                color: $violet;
+    background: $violet;
+    color: $blanc;
+    padding: 1rem;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+    &:hover{
+        cursor: pointer;
+        //border: 1px solid $violet;
+        color: $violet;
                 background: $blanc;
-            }
+    }
+}
+
+
+        .burger{
+            position: relative;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+            outline: none;
+            border-radius: 50%;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .burger span{
+            position: absolute;
+            border-radius: 4px;
+            height: 3px;
+            width: 55%;
+            background: $violet;
+        }
+        .burger span:first-child{
+            transform: translateY(-10px);
+            left: 15px;
+            transition: transform .5s ease-in-out;
+        }
+        .burger.active span:first-child{
+            transform: translateX(1px) rotate(45deg);
+        }
+        .burger span:nth-child(2){
+            transform: scaleX(0.5);
+            transition: transform .5s ease-in-out;
+        }
+        .burger.active span:nth-child(2){
+            transform: translateX(150%);
+        }
+        .burger span:last-child{
+            transform: translateY(10px);
+            right: 15px;
+            transition: transform .5s ease-in-out;
+        }
+        .burger.active span:last-child{
+            transform: translateX(-1px) rotate(-45deg);
         }
 
 .navigation{
@@ -139,16 +183,16 @@ button{
                 margin-left: 1rem;
                 h2{
                     font-weight: bold;
-                    padding: 1rem 0;
+                    //padding: 1rem 0;
                 }
                 p{
                     font-size: 15 px;
-                    padding: 1rem 0;
+                    //padding: 1rem 0;
                 }
                 h3{
                     color: $violet;
                     font-weight: bold;
-                    padding: 1rem 0;
+                    //padding: 1rem 0;
                 }
             }
         }
@@ -182,3 +226,78 @@ button{
         }
     }
 }
+
+@media screen and (max-width: 1140px){
+    .container{
+        width: 95%;
+    }
+} 
+
+@media screen and (max-width: 975px){
+    .container{
+        width: 85%;
+        &-cards{
+            flex-wrap: wrap;
+        }
+    }
+} 
+
+@media screen and (max-width: 750px){
+    .burger{
+        display: flex;
+    }
+    .navigation{
+        &-links{
+            height: 0;
+            position: absolute;
+            background: #fff;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            top: 70px;
+            transition: height .5s ease-in-out;
+        }
+        &-links.active{
+            height: 280px;
+        }
+    }
+} 
+
+@media screen and (max-width: 750px){
+    .header{
+        &-block{
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            //flex-wrap: wrap;
+        }
+    }
+} 
+
+@media screen and (max-width: 550px){
+    .container{
+        width: 95%;
+        &-cards{
+            &-card{
+                flex-wrap: wrap;
+                text-align: center;
+            }
+        }
+        &-description{
+            flex-wrap: wrap;
+            justify-content: center;
+            &-img{
+                width: 100%;
+            }
+            &-info{
+                width: 90%;
+                margin: 0;
+                text-align: center;
+            }
+        }
+    }
+} 
